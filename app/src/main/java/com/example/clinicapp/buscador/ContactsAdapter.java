@@ -17,6 +17,7 @@ import com.example.clinicapp.R;
 import java.util.ArrayList;
 import java.util.List;
 
+
 public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyViewHolder>
         implements Filterable {
     private Context context;
@@ -31,9 +32,9 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
         public MyViewHolder(View view) {
             super(view);
             name = view.findViewById(R.id.name);
-            phone = view.findViewById(R.id.phone);
+
             thumbnail = view.findViewById(R.id.thumbnail);
-            logo=view.findViewById(R.id.logo);
+
 
             view.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -64,18 +65,14 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
     @Override
     public void onBindViewHolder(MyViewHolder holder, final int position) {
         final Contact contact = contactListFiltered.get(position);
-        holder.name.setText(contact.getName());
-        holder.phone.setText(contact.getEspecialidad());
+        holder.name.setText(contact.getEspecialidad());
 
-        Glide.with(context)
-                .load(contact.getImage())
-                .apply(RequestOptions.circleCropTransform())
-                .into(holder.thumbnail);
 
         Glide.with(context)
                 .load(contact.getLogo())
                 .apply(RequestOptions.circleCropTransform())
-                .into(holder.logo);
+                .into(holder.thumbnail);
+
     }
 
     @Override
@@ -97,7 +94,7 @@ public class ContactsAdapter extends RecyclerView.Adapter<ContactsAdapter.MyView
 
                         // name match condition. this might differ depending on your requirement
                         // here we are looking for name or phone number match
-                        if (row.getName().toLowerCase().contains(charString.toLowerCase()) || row.getPhone().contains(charSequence)) {
+                        if (row.getEspecialidad().toLowerCase().contains(charString.toLowerCase())) {
                             filteredList.add(row);
                         }
                     }

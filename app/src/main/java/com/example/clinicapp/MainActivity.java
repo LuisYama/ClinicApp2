@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     private SearchView searchView;
 
     // url to fetch contacts json
-    private static final String URL = "https://gist.githubusercontent.com/sarielpinto/fde469ece9de8cea491373753019ff47/raw/9252b681c281c1484adc2fd04640c79dc803afd5/M%25C3%25A9dico%2520General";
+    private static final String URL = "https://gist.githubusercontent.com/LuisYama/e132cebf6c43115a49e3f5071af2b6cc/raw/3246db0fa035209929ffc6015c5ec23a8fb5f099/simple.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,7 +54,6 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
         // toolbar fancy stuff
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setTitle(R.string.toolbar_title);
-        toolbar.setBackgroundColor(Color.parseColor("#7FD3FA"));
         toolbar.setTitleTextColor(Color.BLACK);
 
         recyclerView = findViewById(R.id.recycler_view);
@@ -173,6 +172,6 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
 
     @Override
     public void onContactSelected(Contact contact) {
-        Toast.makeText(getApplicationContext(), "Selected: " + contact.getName() + ", " + contact.getPhone(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Selected: " + contact.getEspecialidad(), Toast.LENGTH_LONG).show();
     }
 }
