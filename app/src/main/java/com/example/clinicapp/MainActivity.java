@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
     private SearchView searchView;
 
     // url to fetch contacts json
-    private static final String URL = "https://gist.githubusercontent.com/LuisYama/d16f9daa29c2b8c576123ad59f91513c/raw/b0beb910409d7d4fdc6dec8c5338baff4afcf7fd/especialistas.json";
+    private static final String URL = "https://gist.githubusercontent.com/LuisYama/e132cebf6c43115a49e3f5071af2b6cc/raw/3246db0fa035209929ffc6015c5ec23a8fb5f099/simple.json";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -172,6 +172,6 @@ public class MainActivity extends AppCompatActivity implements ContactsAdapter.C
 
     @Override
     public void onContactSelected(Contact contact) {
-        Toast.makeText(getApplicationContext(), "Selected: " + contact.getName() + ", " + contact.getPhone(), Toast.LENGTH_LONG).show();
+        Toast.makeText(getApplicationContext(), "Selected: " + contact.getEspecialidad(), Toast.LENGTH_LONG).show();
     }
 }
